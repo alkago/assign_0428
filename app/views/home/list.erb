@@ -1,0 +1,15 @@
+<h1 style="text-align: center; color: white;">글 목록</h1>
+
+<div class="container" style="background-color: black; color: white; opacity: 0.7; border-radius: 5%;">
+<% @every_post.each do |p|%>
+<p style="font-size: 25px">제목 : <%= p.title %></p><br>
+내용 : <%= p.content %><br>
+시간 : <%= p.created_at %><br>
+<a href="/destroy/<%= p.id %>">[삭제]</a>
+<a href="/update_view/<%= p.id %>">[수정]</a>
+<hr>
+
+<% end %>
+</div>
+
+<h1 style="text-align: center; color: red;"><a href="/">게시판 글 쓰러 가기</a></h1>
